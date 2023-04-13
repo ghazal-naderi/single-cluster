@@ -11,7 +11,7 @@ spec:
   source:
     path: 0-bootstrap/single-cluster
     repoURL: ${GIT_BASEURL}/${GIT_ORG}/${GIT_GITOPS}
-    targetRevision: ${GIT_GITOPS_BRANCH}
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
