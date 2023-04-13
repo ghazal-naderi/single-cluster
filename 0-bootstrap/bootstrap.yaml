@@ -2,15 +2,15 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: bootstrap-single-cluster
-  namespace: eks-gitops
+  namespace: argocd
 spec:
   destination:
-    namespace: eks-gitops
+    namespace: argocd
     server: https://kubernetes.default.svc
   project: default
   source:
     path: 0-bootstrap/single-cluster
-    repoURL: ${GIT_BASEURL}/${GIT_ORG}/${GIT_GITOPS}
+    repoURL: https://github.com/ghazal-naderi/single-cluster
     targetRevision: HEAD
   syncPolicy:
     automated:
