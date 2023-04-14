@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: bootstrap-single-cluster
-  namespace: tools-gitops
+  namespace: argocd
 spec:
   destination:
     namespace: openshift-gitops
@@ -10,8 +10,8 @@ spec:
   project: default
   source:
     path: 0-bootstrap/single-cluster
-    repoURL: ${GIT_BASEURL}/${GIT_ORG}/${GIT_GITOPS}
-    targetRevision: ${GIT_GITOPS_BRANCH}
+    repoURL: https://github.com/ghazal-naderi/single-cluster
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
