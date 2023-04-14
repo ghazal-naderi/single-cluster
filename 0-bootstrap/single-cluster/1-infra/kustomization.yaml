@@ -58,6 +58,6 @@ patches:
     - op: add
       path: /spec/source/repoURL
       value: ${GIT_BASEURL}/${GIT_ORG}/${GIT_GITOPS_INFRA}
-#    - op: add
-#      path: /spec/source/targetRevision
-#      value: ${GIT_GITOPS_INFRA_BRANCH}
+    - op: add
+      path: /spec/source/targetRevision
+      value: HEAD
