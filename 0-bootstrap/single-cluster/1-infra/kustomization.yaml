@@ -49,15 +49,15 @@ resources:
 #- argocd/storage.yaml
 #- argocd/infraconfig.yaml
 #- argocd/machinesets.yaml
-patches:
-- target:
-    group: argoproj.io
-    kind: Application
-    labelSelector: "gitops.tier.layer=infra"
- patch: |-
-    - op: add
-      path: /spec/source/repoURL
-      value: https://github.com/ghazal-naderi/single-cluster
-    - op: add
-      path: /spec/source/targetRevision
-      value: HEAD
+#patches:
+#- target:
+#    group: argoproj.io
+#    kind: Application
+#    labelSelector: "gitops.tier.layer=infra"
+# patch: |-
+#    - op: add
+#      path: /spec/source/repoURL
+#      value: https://github.com/ghazal-naderi/single-cluster
+#    - op: add
+#      path: /spec/source/targetRevision
+#      value: HEAD
