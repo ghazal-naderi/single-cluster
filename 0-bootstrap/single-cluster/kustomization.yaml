@@ -1,7 +1,5 @@
 resources:
 - 1-infra/1-infra.yaml
-- 2-services/2-services.yaml
-- 3-apps/3-apps.yaml
 patches:
 - target:
     group: argoproj.io
@@ -17,13 +15,6 @@ patches:
 - target:
     group: argoproj.io
     kind: AppProject
-  patch: |-
-    - op: add
-      path: /spec/sourceRepos/-
-      value: ${HELM_REPOURL}
-- target:
-    group: argoproj.io
-    kind: AppProject
     labelSelector: "gitops.tier.layer=infra"
   patch: |-
     - op: add
@@ -36,19 +27,6 @@ patches:
     group: argoproj.io
     kind: AppProject
     labelSelector: "gitops.tier.layer=services"
-  patch: |-
-    - op: add
-      path: /spec/sourceRepos/-
-      value: ${GIT_BASEURL}/${GIT_ORG}/${GIT_GITOPS}
-    - op: add
-      path: /spec/sourceRepos/-
-      value: ${GIT_BASEURL}/${GIT_ORG}/${GIT_GITOPS_SERVICES}
-    - op: add
-      path: /spec/sourceRepos/-
-      value: ${GIT_BASEURL}/${GIT_ORG}/${GIT_GITOPS_APPLICATIONS}
-    - op: add
-      path: /spec/sourceRepos/-
-      value: ${HELM_REPOURL}
 - target:
     group: argoproj.io
     kind: AppProject
@@ -56,10 +34,7 @@ patches:
   patch: |-
     - op: add
       path: /spec/sourceRepos/-
-      value: ${GIT_BASEURL}/${GIT_ORG}/${GIT_GITOPS}
-    - op: add
-      path: /spec/sourceRepos/-
-      value: ${GIT_BASEURL}/${GIT_ORG}/${GIT_GITOPS_APPLICATIONS}
+      value: https://github.com/ghazal-naderi/single-cluster
 - target:
     group: argoproj.io
     kind: Application
