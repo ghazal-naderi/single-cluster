@@ -26,10 +26,6 @@ patches:
 - target:
     group: argoproj.io
     kind: AppProject
-    labelSelector: "gitops.tier.layer=services"
-- target:
-    group: argoproj.io
-    kind: AppProject
     labelSelector: "gitops.tier.layer=applications"
   patch: |-
     - op: add
