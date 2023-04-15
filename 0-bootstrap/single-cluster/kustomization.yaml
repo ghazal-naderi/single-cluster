@@ -28,10 +28,10 @@ patches:
   patch: |-
     - op: add
       path: /spec/sourceRepos/-
-      value: ${GIT_BASEURL}/${GIT_ORG}/${GIT_GITOPS}
+      value: https://github.com/ghazal-naderi/single-cluster
     - op: add
       path: /spec/sourceRepos/-
-      value: ${GIT_BASEURL}/${GIT_ORG}/${GIT_GITOPS_INFRA}
+      value: https://github.com/ghazal-naderi/single-cluster-infra
 - target:
     group: argoproj.io
     kind: AppProject
