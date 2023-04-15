@@ -60,4 +60,4 @@ patches:
       value: https://github.com/ghazal-naderi/single-cluster-infra
     - op: add
       path: /spec/source/targetRevision
-      value: main
+      value: HEAD
