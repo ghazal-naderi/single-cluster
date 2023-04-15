@@ -3,6 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: infra
+  namespace: argocd
   labels:
     gitops.tier.layer: infra
 spec:
@@ -116,6 +117,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: infra
+  namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "100"
   labels:
