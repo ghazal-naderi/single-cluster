@@ -45,4 +45,4 @@ patches:
   patch: |-
     - op: replace
       path: /spec/destination/namespace
-      value: tools
+      value: argocd
